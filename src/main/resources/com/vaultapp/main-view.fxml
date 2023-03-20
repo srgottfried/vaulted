@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.shape.Rectangle?>
+
+<?import javafx.scene.image.ImageView?>
+<?import atlantafx.base.theme.Styles?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.vaultapp.controller.MainGUIController">
+    <BorderPane fx:id="userContent">
+        <!-- user content -->
+        <top>
+            <HBox>
+                <Region fx:id="titleSpacer" />
+                <Label fx:id="title"
+                       text="No vault selected"
+                       style="-fx-border-style: hidden solid hidden hidden; -fx-border-width: 1; -fx-border-color: #CCC">
+                    <styleClass>
+                        <Styles fx:constant="TITLE_1" />
+                    </styleClass>
+                </Label>
+            </HBox>
+        </top>
+        <left>
+            <VBox>
+                <Region fx:id="spacer" />
+            </VBox>
+        </left>
+        <center>
+            <TableView fx:id="tblItems" onMouseClicked="#refreshDetailView" />
+        </center>
+        <right>
+            <VBox fx:id="detailView"
+                  minWidth="300"
+                  alignment="TOP_CENTER"
+                  spacing="35">
+                <ImageView fx:id="itemImage"/>
+                <VBox fx:id="itemInfo" spacing="10">
+                    <Label fx:id="detailField1" wrapText="true" />
+                    <Label fx:id="detailField2" wrapText="true" />
+                    <Label fx:id="detailField3" wrapText="true" />
+                    <Label fx:id="detailField4" wrapText="true" />
+                    <ChoiceBox fx:id="chbStatus" visible="false" />
+                    <Button fx:id="btnDelete"
+                            visible="false"
+                            text="Delete"
+                            onAction="#onDeleteClick">
+                        <styleClass>
+                            <Styles fx:constant="BUTTON_OUTLINED" />
+                        </styleClass>
+                        <styleClass>
+                            <Styles fx:constant="DANGER" />
+                        </styleClass>
+                    </Button>
+                </VBox>
+            </VBox>
+        </right>
+    </BorderPane>
+
+    <Rectangle fx:id="layer" mouseTransparent="true" fill="black" opacity="0.0" width="100000" height="100000"/>
+
+    <BorderPane mouseTransparent="true">
+        <left>
+            <Rectangle height="800" fx:id="rect" opacity="0" fill="#537297" visible="false"/>
+        </left>
+    </BorderPane>
+
+    <BorderPane fx:id="controlsLayer" mouseTransparent="true">
+        <left>
+            <VBox fx:id="vbxSidebar"
+                  spacing="10"
+                  style="-fx-border-style: hidden solid hidden hidden; -fx-border-width: 1; -fx-border-color: #CCC">
+
+                <Button fx:id="btnSideMenu" onAction="#expandRectangle" />
+                <VBox fx:id="vaultControlsContainer" alignment="CENTER">
+                    <Button fx:id="btnFilmView" onAction="#chooseVault"/>
+                    <Button fx:id="btnBookView" onAction="#chooseVault"/>
+                    <Button fx:id="btnAddView" onAction="#onAddItemClick" />
+                    <Button fx:id="btnLogout" onAction="#onLogoutClick">
+                        <styleClass>
+                            <Styles fx:constant="LARGE" />
+                        </styleClass>
+                    </Button>
+                </VBox>
+            </VBox>
+        </left>
+    </BorderPane>
+    <Rectangle fx:id="topLayer" mouseTransparent="true" fill="black" opacity="0" width="10000" height="10000"/>
+</StackPane>

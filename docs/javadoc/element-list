@@ -1,0 +1,16 @@
+com.vaultapp
+com.vaultapp.controller
+com.vaultapp.login
+com.vaultapp.model.entities
+com.vaultapp.model.entities.dao
+com.vaultapp.model.pojo.book
+com.vaultapp.model.pojo.book.dao
+com.vaultapp.model.pojo.film
+com.vaultapp.model.pojo.film.dao
+com.vaultapp.model.repository
+com.vaultapp.tests.controller
+com.vaultapp.tests.login
+com.vaultapp.tests.utilities
+com.vaultapp.utilities
+com.vaultapp.utilities.filters
+com.vaultapp.view.cli

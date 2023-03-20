@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.vaultapp.controller.ElementAddController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <VBox>
+        <HBox>
+            <TextField fx:id="txfSearch" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnSearch" text="Search" onAction="#onSearchClick" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnAddElement" text="Add" HBox.hgrow="ALWAYS" onAction="#onAddClick"/>
+        </HBox>
+        <TableView fx:id="tblSearchResults" />
+    </VBox>
+
+</StackPane>
